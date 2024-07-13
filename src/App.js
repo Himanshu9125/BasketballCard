@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import BasketballPlayerCard from './components/Basketballplayer';
 
 function App() {
+  const player = {
+    name: "LeBron James",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReAXEKSmn0koa2-vpKwJpNeCFnzxYC6M56oA&s",
+    position: "Forward",
+    stats: {
+      pointsPerGame: 25.4,
+      assistsPerGame: 7.1,
+      reboundsPerGame: 10.5
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BasketballPlayerCard
+        name={player.name}
+        image={player.image}
+        position={player.position}
+        stats={player.stats}
+      />
     </div>
   );
 }
